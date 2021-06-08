@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-on: [push]
+on: [workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -17,5 +17,6 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   Print-Env:
     runs-on: ubuntu-latest
+    environment: Develop
     steps:
       - run: printenv
