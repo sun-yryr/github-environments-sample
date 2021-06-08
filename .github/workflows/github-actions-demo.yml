@@ -28,7 +28,7 @@ jobs:
     steps:
       - run: printenv
   End-job:
-    if: ${{ needs.Print-Env-develop.result == 'success' || needs.Print-Env-staging.result == 'success' }}
+    if: ${{ (needs.Print-Env-develop.result == 'success') || (needs.Print-Env-staging.result == 'success') }}
     needs: [Print-Env-develop, Print-Env-staging]
     runs-on: ubuntu-latest
     steps:
