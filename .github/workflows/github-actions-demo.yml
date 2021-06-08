@@ -15,9 +15,15 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-  Print-Env:
+  Print-Env-develop:
     runs-on: ubuntu-latest
     needs: Explore-GitHub-Actions
     environment: Develop
+    steps:
+      - run: printenv
+  Print-Env-staging:
+    runs-on: ubuntu-latest
+    needs: Explore-GitHub-Actions
+    environment: Staging
     steps:
       - run: printenv
