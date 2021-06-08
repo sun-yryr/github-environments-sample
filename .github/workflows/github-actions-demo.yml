@@ -27,3 +27,9 @@ jobs:
     environment: Staging
     steps:
       - run: printenv
+  End-job:
+    if: always()
+    needs: [Print-Env-develop, Print-Env-staging]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "End"
